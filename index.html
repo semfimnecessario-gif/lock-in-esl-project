@@ -123,21 +123,83 @@
 
         <script> 
             const challenges = [
-            "🧠 Level: DELULU — 'Snoozing your alarm at 6:55 AM thinking you'll make it.'",
-            "🔥 Level: LOCK IN — 'Me 10 minutes before the deadline after procrastinating all week.'",
-            "🎮 Level: SIDE QUEST — 'Going to the library to study, but organizing books by color instead.'",
-            "☕ Level: LET HIM COOK — 'When a student starts explaining a wild theory and you just listen.'",
-            "👑 Level: MAIN CHARACTER — 'Walking into class late wearing sunglasses.'"   
-            ];
-
+                {
+                    text: "aura farming... or aura losing?",
+                    img: "images/aurapoints.jpg"
+                },
+                {
+                    text: "just a chill guy... is it so?",
+                    img: "images/chillguy.jpg"
+                },
+                {
+                    text: "easy to choose, hard to face",
+                    img: "images/choices.jpg"
+                },
+                {
+                    text: "that's cringe, bro",
+                    img: "images/cringe.jpg"
+                },
+                {
+                    text: "you're delusional my friend",
+                    img:  "images/delulu.jpg"
+                },
+                {
+                    text: "oh, really?",
+                    img: "images/disbelief.jpg"
+                },
+                {
+                    text: "it's giving vibes",
+                    img: "images/it'sgiving.jpg"
+                },
+                {
+                    text: "are u locked in?",
+                    img: "images/lockin.jpg"
+                },
+                {
+                    text: "it's all here",
+                    img: "images/meanwhile.jpg"
+                },
+                {
+                    text: "inside my head",
+                    img: "images/mybrain.jpg"
+                },
+                {
+                    text: "feels like a npc",
+                    img: "//images/npc.jpg"
+                },
+                {
+                    text: "i'm fine... AM I?",
+                    img: "images/panik.jpg"
+                },
+                {
+                    text: "side questing",
+                    img: "images/sidequest.jpg"
+                },
+                {
+                    text: "teens stuff",
+                    img: "images/teenagers.jpg"
+                },
+                {
+                    text: "ate it all",
+                    img: "images/youate.jpg"
+                },
+                {
+                    text: "hey, teacher...",
+                    img: "images/youforgot.jpg"
+                }
+            ];    
+            
             function generateChallenge() {
                 const randomIndex = Math.floor(Math.random() * challenges.lenght);
-                const box = document.getElementById('meme-phrase');
-                box.style.opacity = 0;
-                setTimeout(() => {
-                    box.textContent = challenges[randomIndex];
-                    box.style.opacity = 1;
-                }, 200);
+                const selected = challenges[randomIndex];
+
+                const phraseBox = document.getElementById('meme-phrase');
+                const imgBox = document.getElementById('meme-img');
+
+                //atualiza o texto e a imagem do meme sorteado
+                phraseBox.textContent = selected.text;
+                imgBox.src = selected.img;
+                imgBox.style.display = 'block'; // garante que a img apareça ao clicar
             }
 
         </script>
