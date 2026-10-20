@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Classroom Memes</title>
+            <style>
+                :root {
+                    --bg-color: #0b0f0c;
+                    --card-bg: #141c16;
+                    --accent-color: #00ff66;
+                    --text-main: #f0f4f1;
+                    --text-muted: #8c9e90;
+                 
+                }
+
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Segoe UI', system-ui, sans-serif;
+                }
+
+                body {
+                    background-color: var(--bg-color);
+                    color: var(--text-main);
+                    min-height: 100vh;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 2rem;
+                }
+
+                header {
+                    text-align: center;
+                    margin-bottom: 2rem;
+                }
+
+                header h1 {
+                    font-size: 2.5rem;
+                    color: var(--accent-color);
+                    text-shadow: 0 0 15px rgba(0,255,102, 0.4);
+                    margin-bottom: 0.5rem;
+                }
+
+                header p {
+                    color: var(--text-muted);
+                    font-size: 1.1rem;
+                }
+
+                main {
+                    background: var(--card-bg);
+                    border: 1px solid rgba(0,255,102, 0.2);
+                    border-radius: 12px;
+                    padding: 2.5rem;
+                    width: 100%;
+                    max-width: 600px;
+                    box-shadow: 0 8px 32px rgba(0,0,0, 0.5);
+                    text-align: center;
+                }
+
+                .challenge-box {
+                    margin-bottom: 2rem;
+                }
+
+                #meme-phrase {
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    margin-bottom: 1.5rem;
+                    min-height: 80px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                
+                button {
+                    background-color: var(--accent-color);
+                    color: #000;
+                    border: none;
+                    padding: 0.8rem 1.8rem;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 0 10px rgba(0,255,102, 0.3)
+                }
+
+                button:hover {
+                    background-color: #00cc52;
+                    box-shadow: 0 0 20px rgba(0,255,102, 0.6);
+                    transform: translateY(-2px);
+                }
+
+                footer {
+                    margin-top: 2rem;
+                    color: var(--text-muted);
+                    font-size: 0.9rem;   
+                }
+                span.highlight {
+                    color: var(--accent-color);
+                }
+            </style>
+    </head>
+    <body>
+
+        <header>
+            <h1>LOCK IN PROJECT</h1>
+            <p>ESL Meme Challenge & Quick Practice Hub</p>
+        </header>
+
+        <main>
+            <div class="challenge-box">
+                <div id="meme-phrase">Click the button to generate a random challenge!</div>
+                <button onclick="generateChallenge()">Generate Challenge</button>
+            </div>
+        </main>
+
+        <footer> 
+            <p>Built with <span class="highlight">HTML, CSS & JS</span> in 1 hour.</p>
+        </footer>
+
+        <script> 
+            const challenges = [
+            "🧠 Level: DELULU — 'Snoozing your alarm at 6:55 AM thinking you'll make it.'",
+            "🔥 Level: LOCK IN — 'Me 10 minutes before the deadline after procrastinating all week.'",
+            "🎮 Level: SIDE QUEST — 'Going to the library to study, but organizing books by color instead.'",
+            "☕ Level: LET HIM COOK — 'When a student starts explaining a wild theory and you just listen.'",
+            "👑 Level: MAIN CHARACTER — 'Walking into class late wearing sunglasses.'"   
+            ];
+
+            function generateChallenge() {
+                const randomIndex = Math.floor(Math.random() * challenges.lenght);
+                const box = document.getElementById('meme-phrase');
+                box.style.opacity = 0;
+                setTimeout(() => {
+                    box.textContent = challenges[randomIndex];
+                    box.style.opacity = 1;
+                }, 200);
+            }
+
+        </script>
+    </body>
+</html>
