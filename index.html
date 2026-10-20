@@ -113,6 +113,7 @@
         <main>
             <div class="challenge-box">
                 <div id="meme-phrase">Click the button to generate a random challenge!</div>
+                <img id="meme-img" src="" alt="Meme" style="display: none; max-width:100%; margin-top:10px;">
                 <button onclick="generateChallenge()">Generate Challenge</button>
             </div>
         </main>
@@ -190,7 +191,7 @@
             ];    
             
             function generateChallenge() {
-                const randomIndex = Math.floor(Math.random() * challenges.lenght);
+                const randomIndex = Math.floor(Math.random() * challenges.length);
                 const selected = challenges[randomIndex];
 
                 const phraseBox = document.getElementById('meme-phrase');
